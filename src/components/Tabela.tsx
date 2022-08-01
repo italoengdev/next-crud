@@ -15,9 +15,9 @@ export default function Tabela(props: TabelaProps){
 
   function renderizarCabecalho(){
     return(<tr>
-        <th className="text-left p-4">Código</th>
+        <th className="text-left p-4 md:flex d-none">Código</th>
         <th className="text-left p-4">Nome</th>
-        <th className="text-left p-4">Idade</th>
+        <th className="text-left p-4 md:flex d-none">Idade</th>
         {exibirAcoes ? <th className="p-4">Ações</th> : false}
       </tr>)
   }
@@ -26,9 +26,9 @@ export default function Tabela(props: TabelaProps){
     return props.clientes?.map((cliente,i) => {
       return (
         <tr key={cliente.id} className={`${i % 2 === 0 ? "bg-purple-200" : "bg-purple-100"}`}>
-          <td className="text-left p-4">{cliente.id}</td>
+          <td className="text-left p-4 md:flex d-none">{cliente.id}</td>
           <td className="text-left p-4">{cliente.nome}</td>
-          <td className="text-left p-4">{cliente.idade}</td>
+          <td className="text-left p-4" >{cliente.idade}</td>
           {exibirAcoes ? renderizarAcoes(cliente) : false}
         </tr>
       )
